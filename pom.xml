@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>thb</groupId>
+    <artifactId>dummy-angular</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>Dummy Angular</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <jetty.scaninterval>10</jetty.scaninterval>
+        <jetty.port>8080</jetty.port>
+        <jetty.stopPort>9999</jetty.stopPort>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>dummy-angular</finalName>
+        <plugins>
+
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>7.1.5.v20100705</version>
+                <configuration>
+                    <connectors>
+                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                            <port>${jetty.port}</port>
+                            <maxIdleTime>60000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                    <scanIntervalSeconds>${jetty.scaninterval}</scanIntervalSeconds>
+                    <stopKey>${project.artifactId}-stop</stopKey>
+                    <stopPort>${jetty.stopPort}</stopPort>
+                    <webAppConfig>
+                        <contextPath>/dummy</contextPath>
+                        <tempDirectory>${project.build.directory}/work</tempDirectory>
+                    </webAppConfig>
+                    <systemProperties>
+                    </systemProperties>
+                </configuration>
+                <dependencies>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
