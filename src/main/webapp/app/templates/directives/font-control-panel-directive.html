@@ -18,7 +18,7 @@
                     style="font-family: 'Lucida Sans Unicode', sans-serif; font-size: 12px;">
             </select>&nbsp;
         </td>
-        <td valign="middle">
+        <td valign="middle" ng-show="false">
             <span ng-repeat="colorScheme in colorSchemes" ng-style="secondaryTextStyle"><a href="#" ng-style="secondaryTextStyle" ng-click="selectColorScheme(colorScheme.id)">{{colorScheme.id}}</a>&nbsp;|&nbsp;</span>
         </td>
     </tr>

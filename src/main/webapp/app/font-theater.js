@@ -9,6 +9,15 @@ app.config(
         when('/headings', {
             templateUrl: 'app/templates/headings.html'
         }).
+        when('/text-page-1', {
+            templateUrl: 'app/templates/text-page-1.html'
+        }).
+        when('/aquitaine', {
+            templateUrl: 'app/templates/aquitaine.html'
+        }).
+        when('/dummy', {
+            templateUrl: 'app/templates/dummy.html'
+        }).
         when('/br-forside', {
             templateUrl: 'app/templates/br-forside.html'
         }).

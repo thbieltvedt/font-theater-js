@@ -1,0 +1,22 @@
+<html ng-app="app" ng-controller="FontController">
+    <head>
+        <title>Font Theater</title>
+        <script type='text/javascript' src="lib/angular-1.2.10/angular.min.js"></script>
+        <script type='text/javascript' src="lib/angular-1.2.10/angular-resource.min.js"></script>
+        <script type='text/javascript' src="lib/angular-1.2.10/angular-route.min.js"></script>
+        <script type='text/javascript' src="app/font-theater.js"></script>
+        <script type='text/javascript' src="app/modules/fontlibrary/fontlibrary.js"></script>
+        <script type='text/javascript' src="app/modules/colorschemes/colorschemes.js"></script>
+
+        <link ng-href='http://fonts.googleapis.com/css?family={{currentFont.id}}' rel='stylesheet' type='text/css' ng-repeat="currentFont in currentFontCollection">
+        <link href='css/font-theater.css' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body style="margin: 0; padding: 0;" ng-keydown="keyPressed($event)">
+    <table class="plainTable" style="width: 100%; height: 100%;">
+        <tr ng-repeat="currentFont in currentFontCollection" >
+            <td ng-view style="font-family: '{{currentFont.name}}'; width: 100%;"></td>
+        </tr>
+    </table>
+    </body>
+</html>

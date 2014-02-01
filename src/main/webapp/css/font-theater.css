@@ -79,5 +79,6 @@ table.plainTable {
 
 table.plainTable tr td, table.plainTable tr th {
     vertical-align: top;
+    white-space: nowrap;
 }
 
