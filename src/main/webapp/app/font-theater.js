@@ -9,6 +9,12 @@ app.config(
         when('/headings', {
             templateUrl: 'app/templates/headings.html'
         }).
+        when('/br-forside', {
+            templateUrl: 'app/templates/br-forside.html'
+        }).
+        when('/br-om-oss', {
+            templateUrl: 'app/templates/br-om-oss.html'
+        }).
         otherwise({
             redirectTo: '/'
         });
@@ -59,6 +65,8 @@ app.controller('FontController', function ($scope, fontLibrary, colorSchemes) {
             $scope.selectPreviousFont();
         } else if (event.which == 39) {
             $scope.selectNextFont();
+        } else if (event.which == 80) {
+            $scope.showFontControlPanel = !$scope.showFontControlPanel;
         }
     };
 
@@ -73,6 +81,8 @@ app.controller('FontController', function ($scope, fontLibrary, colorSchemes) {
     };
 
     $scope.selectColorScheme(colorSchemes.get(0).id);
+
+    $scope.showFontControlPanel = true;
 
     function fontStyle(font) {
         return {'font-family': font.name};
