@@ -70,3 +70,14 @@ select {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+table.plainTable {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+}
+
+table.plainTable tr td, table.plainTable tr th {
+    vertical-align: top;
+}
+
